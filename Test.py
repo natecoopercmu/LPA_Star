@@ -1,3 +1,6 @@
+#USED FOR TESTING PURPOSES ONLY -- DO NOT USE
+
+
 import copy
 
 xLength = 12
