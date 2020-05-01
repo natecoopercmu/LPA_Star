@@ -1,3 +1,5 @@
+#Creates the environment, start and end points for A* and LPA*
+
 xLength = 120
 yLength = 70
 
