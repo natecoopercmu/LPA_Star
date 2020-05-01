@@ -1,6 +1,11 @@
 import pygame, sys
 from pygame.locals import *
 
+#PyGame modules required to run Visual.py
+#https://www.pygame.org/wiki/GettingStarted#Pygame%20Installation
+
+#After running A_Star.py or LPA_Star.py, running Visual.py will create a figure for the path and environment
+
 windowWidth = 500
 windowHeight = 500
 dx = int(windowWidth/xLength)
@@ -28,15 +33,15 @@ def paint(i,j,color):
 def displayEnvironment(env,path=[]):
     for i in range(len(env.gArray)):
         for j in range(len(env.gArray[0])):
-            if (j,i) in path: paint(i,j,RED)
+            if (j,i) in path: paint(i,j,RED) # paths are shown in red
             elif env.gArray[i][j] == -1: paint(i,j,BLACK)
-            elif env.gChanges[i][j] > 0: paint(i,j,BLUE)
+            elif env.gChanges[i][j] > 0: paint(i,j,BLUE) # nodes that have been updated are shown in blue
             elif env.gChanges[i][j] < 0: paint(i,j,BLUE)
             else: paint(i,j,WHITE)
 
 
-displayEnvironment(env,pathLPA_02)
-#displayEnvironment(env,pathA_02)
+displayEnvironment(env,pathLPA_02) #uncomment me to show the LPA* path and processes
+#displayEnvironment(env,pathA_02) #uncomment me to show the A* path and process
 print(env.gChanges)
 paint(startx,starty,PURPLE)
 paint(endy,endx,ORANGE)
