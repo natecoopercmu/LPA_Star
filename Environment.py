@@ -2,6 +2,7 @@
 import numpy as np
 import heapq
 
+#Environment class defines graph properties and allows for A* and LPA* searches
 
 class Environment:
     def __init__(self,w,h):
